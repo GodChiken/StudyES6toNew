@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fba07d00-9f19-4015-827c-c60a77091144" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="fba07d00-9f19-4015-827c-c60a77091144" name="Default Changelist" comment="close #1 let, const, BlockLevel Scope - const 와 활용 노하우" />
+    <list id="2cb8e4f0-23dc-492c-be38-589e413396ed" name="Revert &quot;#1 let, const, BlockLevel Scope - const 와 활용 노하우&quot;" comment="Revert &quot;#1 let, const, BlockLevel Scope - const 와 활용 노하우&quot;&#10;&#10;This reverts commit 6b2c323c">
       <change beforePath="$PROJECT_DIR$/markdown/act-1/letAndConstAndBlockScope.md" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/act-1/letAndConstAndBlockScope.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,7 +78,7 @@
       <workItem from="1570256052764" duration="1198000" />
       <workItem from="1570257337505" duration="2532000" />
       <workItem from="1570326678191" duration="571000" />
-      <workItem from="1570327802319" duration="4938000" />
+      <workItem from="1570327802319" duration="5180000" />
     </task>
     <task id="LOCAL-00001" summary="#1 기타 설정 및 md 파일 생성">
       <created>1570256337308</created>
@@ -101,7 +101,28 @@
       <option name="project" value="LOCAL" />
       <updated>1570257879963</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="#1 let, const, BlockLevel Scope - let keyword">
+      <created>1570344126879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570344126879</updated>
+    </task>
+    <task id="LOCAL-00005" summary="#1 let, const, BlockLevel Scope - block scope">
+      <created>1570344171411</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570344171411</updated>
+    </task>
+    <task id="LOCAL-00006" summary="#1 let, const, BlockLevel Scope - const 와 활용 노하우">
+      <created>1570344193933</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1570344193933</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +145,9 @@
     <MESSAGE value="#1 기타 설정 및 md 파일 생성" />
     <MESSAGE value="#2 md 파일 생성" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="#1 let, const, BlockLevel Scope - let keyword" />
+    <MESSAGE value="#1 let, const, BlockLevel Scope - block scope" />
+    <MESSAGE value="#1 let, const, BlockLevel Scope - const 와 활용 노하우" />
+    <option name="LAST_COMMIT_MESSAGE" value="#1 let, const, BlockLevel Scope - const 와 활용 노하우" />
   </component>
 </project>
