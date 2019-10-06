@@ -12,3 +12,53 @@
             * 변수는 선언 -> 초기화 -> 할당의 단계를 걸쳐 생성되며 var 키워드는 이 과정 중 선언,초기화 단계가 한번에 이루어져 에러가 발생하지 않는다.
             * let 은 선언과 초기화의 단계가 별도로 분리되어 진행된다. 즉 변수를 위한 메모리 공간을 확보는 변수 선언문이 수행될 때 이루어진다.
         * 전역으로 선언을 할지라도 전역 객체의 프로퍼티가 될 수 없다.
+* block scope
+    * 말 그대로 블록 단위로 스코프가 유지됨을 의미한다.
+    * 클로저로 예를 살펴보자. [이유는 이곳에서 확인하자](https://github.com/GodChiken/StudyES5/blame/master/src/main/resources/markdown/scope/scope.md#L41-L61)
+    ```
+        var myArray = [];
+        
+        // 함수의 배열을 생성하는 for 루프의 i는 전역 변수다.
+        for (var i = 0; i < 3; i++) {
+          myArray.push(function () { 
+            console.log(i); 
+          });
+        }
+        
+        // 배열에서 함수를 꺼내어 호출한다.
+        for (var j = 0; j < 3; j++) {
+          myArray[j]();
+        }
+        
+        // 3이 3번 출력된다.    
+    ```
+    * 위 코드를 0,1,2 순으로 올바르게 작동 시키려면 다음과 같다.
+    ```
+        var myArray = [];
+        
+        // 함수의 배열을 생성하는 for 루프의 i는 전역 변수다.
+        for (var i = 0; i < 3; i++) {
+          (function (index) { 
+            myArray.push(function () { console.log(index); });
+          }(i));
+        }
+        
+        // 배열에서 함수를 꺼내어 호출한다
+        for (var j = 0; j < 3; j++) {
+          myArray[j]();
+        }    
+    ```
+    * let 키워드를 사용하면 이러한 클로저를 작성 안해도 동일한 효과를 가져갈 수 있다.
+    ```
+        var myArray = [];
+        
+        // i 는 루프의 코드 블록에서만 유효한 지역 변수이면서 자유 변수이다.
+        for (let i = 0; i < 3; i++) {
+          myArray.push(function () { console.log(i); });
+        }       
+        
+        for (var j = 0; j < 3; j++) {
+          console.dir(myArray[j]);
+          myArray[j]();
+        }    
+    ```        
