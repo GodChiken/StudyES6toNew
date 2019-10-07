@@ -83,4 +83,71 @@
         ```
         * 이벤트 할당도 동일한 문제를 가지고 있으니 일반 함수로 사용을 권장한다. 
         * 생성자 함수로 사용할 수 없다. 프로토타입을 가지고 있지 않기 때문이다.
+* for..of
+    * 이터레이터 공부할 때 함께 정리
+* Destructuring
+    * Array Destructuring 
+        * ES6의 배열 디스트럭처링은 배열의 각 요소를 배열로부터 추출하여 변수 리스트에 할당한다. 이때 추출/할당 기준은 배열의 인덱스이다.
+        ```javascript
         
+            const arr = [1, 2, 3];            
+            /*
+                배열의 인덱스를 기준으로 배열로부터 요소를 추출하여 변수에 할당
+                변수 first, second, third 선언되고 arr(initializer(초기화자))가 Destructuring(비구조화, 파괴)되어 할당된다.
+            */
+            const [first, second, third] = arr;
+            /*
+                디스트럭처링을 사용할 때는 반드시 initializer(초기화자)를 할당해야 한다.
+                const [first, second, third]; // SyntaxError: Missing initializer in destructuring declaration
+            */            
+            console.log(first, second, third); // 1 2 3        
+        ```
+    * Object Destructuring
+        * ES6의 객체 디스트럭처링은 객체의 각 프로퍼티를 객체로부터 추출하여 변수 리스트에 할당한다. 이때 할당 기준은 프로퍼티 이름(키)이다.
+        ```javascript            
+            const obj = { firstName: 'Ungmo', lastName: 'Lee' };         
+            
+            const { lastName, firstName } = obj;
+            
+            console.log(firstName, lastName); // Ungmo Lee        
+        ```
+        * 객체 디스트럭처링을 위해서는 할당 연산자 왼쪽에 객체 형태의 변수 리스트가 필요하다.
+        ```javascript            
+            const { prop1: p1, prop2: p2 } = { prop1: 'a', prop2: 'b' };
+            console.log(p1, p2); 
+            
+            // 동일한 표현이나 좀더 축약하면 다음과 같다.
+            const { prop1, prop2 } = { prop1: 'a', prop2: 'b' };
+            console.log({ prop1, prop2 }); 
+            
+            // default value 를 destructure 에 정할수 있다.
+            const { prop1, prop2, prop3 = 'c' } = { prop1: 'a', prop2: 'b' };
+            console.log({ prop1, prop2, prop3 });         
+        
+        ```
+        * Array.prototype.filter 메소드의 콜백 함수는 대상 배열(todos)을 순회하며 첫 번째 인자로 대상 배열의 요소를 받는다. 
+        * 이때 필요한 프로퍼티(completed 프로퍼티)만을 추출할 수 있다.
+        * 객체 디스트럭처링은 객체에서 프로퍼티 이름(키)으로 필요한 프로퍼티 값만을 추출할 수 있다. 아래의 코드를 살펴보자.        
+        ```javascript
+            const todoList = [
+              { id: 1, content: 'HTML', completed: true },
+              { id: 2, content: 'CSS', completed: false },
+              { id: 3, content: 'JS', completed: false }
+            ];
+            
+            // java8 stream 에서 확인했던, 그 메서드와 기능상으로 매우 동일했다.
+            const completedTodoList = todoList.filter(({ completed }) => completed);
+            console.log(completedTodoList);                 
+        ```
+        * 중첩 객체의 경우는 아래와 같이 사용한다. 이런 식으로 접근이 가능하다는 것 정도로만 기억한다. (남발하면 가독성 결여)
+        ```javascript
+            const person = {
+              name: 'Kim',
+              address: {
+                zipCode: '00000',
+                city: 'Seoul'
+              }
+            };            
+            const { address: { city } } = person;
+            console.log(city);                 
+        ```

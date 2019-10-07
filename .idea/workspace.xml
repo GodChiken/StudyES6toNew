@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fba07d00-9f19-4015-827c-c60a77091144" name="Default Changelist" comment="close #1 let, const, BlockLevel Scope - const 와 활용 노하우">
+    <list default="true" id="fba07d00-9f19-4015-827c-c60a77091144" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/markdown/act-2/overallGrammer.md" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/act-2/overallGrammer.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/study/act2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/study/act2.js" afterDir="false" />
     </list>
     <list id="2cb8e4f0-23dc-492c-be38-589e413396ed" name="Revert &quot;#1 let, const, BlockLevel Scope - const 와 활용 노하우&quot;" comment="Revert &quot;#1 let, const, BlockLevel Scope - const 와 활용 노하우&quot;&#10;&#10;This reverts commit 6b2c323c" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,7 +43,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.20362622" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.other" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -139,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570423069580</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="#2 문법 - Arrow Function">
+      <created>1570450259089</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1570450259090</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +172,7 @@
     <MESSAGE value="#1 let, const, BlockLevel Scope - block scope" />
     <MESSAGE value="#1 let, const, BlockLevel Scope - const 와 활용 노하우" />
     <MESSAGE value="#2 문법 - 실습 js" />
-    <option name="LAST_COMMIT_MESSAGE" value="#2 문법 - 실습 js" />
+    <MESSAGE value="#2 문법 - Arrow Function" />
+    <option name="LAST_COMMIT_MESSAGE" value="#2 문법 - Arrow Function" />
   </component>
 </project>
