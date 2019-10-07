@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fba07d00-9f19-4015-827c-c60a77091144" name="Default Changelist" comment="close #1 let, const, BlockLevel Scope - const 와 활용 노하우">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/markdown/act-2/overallGrammer.md" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/act-2/overallGrammer.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/study/act2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/study/act2.js" afterDir="false" />
     </list>
     <list id="2cb8e4f0-23dc-492c-be38-589e413396ed" name="Revert &quot;#1 let, const, BlockLevel Scope - const 와 활용 노하우&quot;" comment="Revert &quot;#1 let, const, BlockLevel Scope - const 와 활용 노하우&quot;&#10;&#10;This reverts commit 6b2c323c" />
