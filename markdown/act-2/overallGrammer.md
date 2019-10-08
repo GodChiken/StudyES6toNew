@@ -151,3 +151,28 @@
             const { address: { city } } = person;
             console.log(city);                 
         ```
+* ES6 에서의 파라미터의 변화
+    * 파라미터에 디폴트 값 선언이 가능하다.            
+        ``` javascript
+            function defaultValueInParameter(x=0, y=1){
+                return x+y;
+            }
+        ```
+        * 또한 기본값을 정하여도 length, arguments 에 영향을 미치지 않는다    
+    * Rest Parameter
+        * 기본적인 형식은 다음과 같다.
+        ```javascript
+        // 일반적인 형태이며 가변인자를 배열 형태로 받는다.
+        function restParameterFunction(...rest){
+            console.log(Array.isArray(rest));
+            console.log(rest);
+            return rest.reduce((first, second) => first + second);
+        }
+        // 반드시 제일 마지막에 위치하지 않으면 Syntax Error 발생
+        function parameterCombination(first,second, ...rest){
+            console.log(Array.isArray(rest));
+            console.log(rest);
+        }
+        ```               
+* Spread Syntax
+* Rest/Spread Property        
