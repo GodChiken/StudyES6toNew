@@ -175,4 +175,24 @@
         }
         ```               
 * Spread Syntax
+    * 정의된 설명으론 ***'이터러블'*** 인 대상을 개별 요소로 분할한다.
+    * 모양은 Rest Syntax 와 동일하나 일반적인 객체는 type error 을 발생시킨다.
+    ```javascript        
+        console.log(...[1, 2, 3]); // 1, 2, 3        
+        console.log(...'Hello');  // H e l l o 
+        console.log(...new Map([['a', '1'], ['b', '2']]));  // [ 'a', '1' ] [ 'b', '2' ]
+        console.log(...new Set([1, 2, 3]));  // 1 2 3        
+        console.log(...{ a: 1, b: 2 }); // 이터러블이 아닌 일반 객체는 Spread 문법의 대상이 될 수 없다.            
+    ```
+    * 일반 함수에 argument 로 Spread 형태의 배열을 전달되는 경우 순차적으로 해당 함수의 파라미터에 할당한다.
+    ```javascript
+        const arr = [1, 2, 3];
+
+        function foo(x, y, z) {
+          console.log(x); 
+          console.log(y); 
+          console.log(z); 
+        }         
+        foo(...arr);    
+    ```
 * Rest/Spread Property        
