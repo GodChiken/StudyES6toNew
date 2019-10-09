@@ -195,4 +195,43 @@
         }         
         foo(...arr);    
     ```
-* Rest/Spread Property        
+* Rest/Spread Property
+    * 일반 객체에 자체해서는 분할과 병합이 불가하나, 프로퍼티는 가능하다.
+    * 일반적으로는 다음과 같이 객체를 병합해 나갔다.
+    ```javascript
+        const target = { a: 1, b: 2 };
+        const source = { b: 4, c: 5 };
+        
+        const returnedTarget = Object.assign(target, source);
+        
+        console.log(target); // Object { a: 1, b: 4, c: 5 }        
+        console.log(returnedTarget); // Object { a: 1, b: 4, c: 5 }    
+    ```
+    * 특별히 원본 객체를 재사용 하는 방식이 아니라면 상관이 없으나, 재사용이 이루어져야하는 경우에는 치명적인 오류가 발생하는거 같았다.
+    * 다음과 같이 Spread Property 를 사용하는 경우에 위와 같은 사항을 방지할 수 있다. 또한 특별히 따로 묶어서 분할하고자하는 경우에는 Rest Property 를 사용하면 된다.
+    ```javascript
+        // Spread Property
+        const target = { a: 1, b: 2 };
+        const source = { b: 4, c: 5 };
+        console.log(target);
+        console.log(source);
+        const merge = { ...target, ...source };
+        console.log(merge);
+        console.log(target);
+        
+        // Rest Property
+        const {single, ...collection} = merge;
+        
+        // 객체의 병합
+        const merged = { ...{ x: 1, y: 2 }, ...{ y: 10, z: 3 } };
+        console.log(merged); // { x: 1, y: 10, z: 3 }
+        
+        // 특정 프로퍼티 변경
+        const changed = { ...{ x: 1, y: 2 }, y: 100 };        
+        console.log(changed); // { x: 1, y: 100 }
+        
+        // 프로퍼티 추가
+        const added = { ...{ x: 1, y: 2 }, z: 0 };        
+        console.log(added); // { x: 1, y: 2, z: 0 }
+    ```
+         
