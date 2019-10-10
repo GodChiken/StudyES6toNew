@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fba07d00-9f19-4015-827c-c60a77091144" name="Default Changelist" comment="">
+    <list default="true" id="fba07d00-9f19-4015-827c-c60a77091144" name="Default Changelist" comment="#2 문법 - ES6 에서의 파라미터의 변화">
+      <change afterPath="$PROJECT_DIR$/src/component/tutorial.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/markdown/act-2/overallGrammer.md" beforeDir="false" afterPath="$PROJECT_DIR$/markdown/act-2/overallGrammer.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <list id="2cb8e4f0-23dc-492c-be38-589e413396ed" name="Revert &quot;#1 let, const, BlockLevel Scope - const 와 활용 노하우&quot;" comment="Revert &quot;#1 let, const, BlockLevel Scope - const 와 활용 노하우&quot;&#10;&#10;This reverts commit 6b2c323c" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,6 +46,12 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.20362622" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MASTER-KBH\IdeaProjects\StudyES6toNew\src\component" />
+      <recent name="C:\Users\MASTER-KBH\IdeaProjects\StudyES6toNew\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -88,7 +96,8 @@
       <workItem from="1570326678191" duration="571000" />
       <workItem from="1570327802319" duration="5180000" />
       <workItem from="1570407553192" duration="5678000" />
-      <workItem from="1570515691153" duration="2420000" />
+      <workItem from="1570515691153" duration="4509000" />
+      <workItem from="1570672728227" duration="2982000" />
     </task>
     <task id="LOCAL-00001" summary="#1 기타 설정 및 md 파일 생성">
       <created>1570256337308</created>
@@ -146,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570450259090</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="#2 문법 - ES6 에서의 파라미터의 변화">
+      <created>1570518997307</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1570518997307</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +190,7 @@
     <MESSAGE value="#1 let, const, BlockLevel Scope - const 와 활용 노하우" />
     <MESSAGE value="#2 문법 - 실습 js" />
     <MESSAGE value="#2 문법 - Arrow Function" />
-    <option name="LAST_COMMIT_MESSAGE" value="#2 문법 - Arrow Function" />
+    <MESSAGE value="#2 문법 - ES6 에서의 파라미터의 변화" />
+    <option name="LAST_COMMIT_MESSAGE" value="#2 문법 - ES6 에서의 파라미터의 변화" />
   </component>
 </project>
