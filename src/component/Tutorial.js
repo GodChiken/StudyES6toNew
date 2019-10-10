@@ -1,10 +1,10 @@
 import React from 'react';
 
-function HelloReact(){
+function Tutorial(){
     return (
         <h1 className="greeting">
             Hello, React!
         </h1>
     );
 }
-export default HelloReact;
+export default Tutorial;
