@@ -167,4 +167,4 @@
             // 원하는 값만 취득하는 방식
             const [f1, f2, f3] = fibonacciFunc();
             console.log(f1, f2, f3); // 1 2 3                
-        ```      
+        ```              
