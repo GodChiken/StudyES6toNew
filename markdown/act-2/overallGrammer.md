@@ -84,7 +84,45 @@
         * 이벤트 할당도 동일한 문제를 가지고 있으니 일반 함수로 사용을 권장한다. 
         * 생성자 함수로 사용할 수 없다. 프로토타입을 가지고 있지 않기 때문이다.
 * for..of
-    * 이터레이터 공부할 때 함께 정리
+    * for…of 문은 내부적으로 이터레이터의 next 메소드를 호출하여 이터러블을 순회하며 next 메소드가 반환한 이터레이터 리절트 객체의 value 프로퍼티 값을 for…of 문의 변수에 할당한다. 그리고 이터레이터 리절트 객체의 done 프로퍼티 값이 false 이면 이터러블의 순회를 계속하고 true 이면 이터러블의 순회를 중단한다.
+    ```javascript
+        // 배열
+        for (const item of ['a', 'b', 'c']) {
+          console.log(item);
+        }
+        
+        // 문자열
+        for (const letter of 'abc') {
+          console.log(letter);
+        }
+        
+        // Map
+        for (const [key, value] of new Map([['a', '1'], ['b', '2'], ['c', '3']])) {
+          console.log(`key : ${key} value : ${value}`); // key : a value : 1 ...
+        }
+        
+        // Set
+        for (const val of new Set([1, 2, 3])) {
+          console.log(val);
+        }
+        
+        // 내부적으로 어떻게 동작하는지 for 로 표현하면 다음과 같다.
+        // 이터러블
+        const iterable = [1, 2, 3];
+        
+        // 이터레이터
+        const iterator = iterable[Symbol.iterator]();
+        
+        for (;;) {
+          // 이터레이터의 next 메소드를 호출하여 이터러블을 순회한다.
+          const res = iterator.next();
+        
+          // next 메소드가 반환하는 이터레이터 리절트 객체의 done 프로퍼티가 true가 될 때까지 반복한다.
+          if (res.done) break;
+        
+          console.log(res);
+        }
+    ```
 * Destructuring
     * Array Destructuring 
         * ES6의 배열 디스트럭처링은 배열의 각 요소를 배열로부터 추출하여 변수 리스트에 할당한다. 이때 추출/할당 기준은 배열의 인덱스이다.
