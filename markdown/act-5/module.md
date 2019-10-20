@@ -17,4 +17,7 @@
         * IE를 포함한 구형 브라우저는 ES6 모듈을 지원하지 않는다.
         * 브라우저의 ES6 모듈 기능을 사용하더라도 트랜스파일링이나 번들링이 필요하다.
         * 아직 지원하지 않는 기능(Bare import 등)이 있다. (ECMAScript modules in browsers 참고)
-        * 점차 해결되고는 있지만 아직 몇가지 이슈가 있다. (ECMAScript modules in browsers 참고)    
+        * 점차 해결되고는 있지만 아직 몇가지 이슈가 있다. (ECMAScript modules in browsers 참고)
+* 모듈의 파일 스코프
+    * 파일 단위로 스코프가 이루어지므로 설사 var 키워드를 통해 변수를 선언할 지라도 변수의 중복선언이나 외부에서의 참조가 일어날 수 없다.        
+            
