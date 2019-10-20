@@ -39,4 +39,27 @@
     }    
     //매번 export 키워드를 사용하는 것이 번거로우면 다음과 같이 하나의 객체로 구성하여 export 하자
     export {pi, square, Person} ;
-    ```        
+    ```
+* import 키워드
+    * 특별히 몰랐던 부분만 정리한다.
+    * 다른이름으로 export 된 내용 사용하는 방법
+    ```javascript
+    import { pi as PI, square as sq, Person as P } from './lib';
+    
+    console.log(PI);
+    console.log(sq(2));
+    console.log(new P('Kim'));        
+    ```
+    * 모듈에서는 단 하나만 export 하는 경우에 default 키워드와 함께 사용이 가능하다. 다만 사용할 경우 var, let, const 등은 사용이 불가하다. 
+    ```javascript
+    function (x) {
+      return x * x;
+    }
+    export default;
+    
+    //위 코드를 아래와 같이 축약 표현할 수 있다.
+    export default function (x) { return x * x; }
+    
+    //위와 같이 export 한 내용은 임의의 이름으로 import 가 가능하다.
+    import multiply from './lib';
+    ```                 
