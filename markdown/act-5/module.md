@@ -19,5 +19,24 @@
         * 아직 지원하지 않는 기능(Bare import 등)이 있다. (ECMAScript modules in browsers 참고)
         * 점차 해결되고는 있지만 아직 몇가지 이슈가 있다. (ECMAScript modules in browsers 참고)
 * 모듈의 파일 스코프
-    * 파일 단위로 스코프가 이루어지므로 설사 var 키워드를 통해 변수를 선언할 지라도 변수의 중복선언이나 외부에서의 참조가 일어날 수 없다.        
-            
+    * 파일 단위로 스코프가 이루어지므로 설사 var 키워드를 통해 변수를 선언할 지라도 변수의 중복선언이나 외부에서의 참조가 일어날 수 없다.
+* export 키워드
+    * 외부에 모듈의 선언한 내용을 참조시키기 위해서 사용을 한다.
+    * 기본적인 사용법은 다음과 같다.
+    ```javascript    
+    export const pi = Math.PI;
+    
+    // 함수의 공개
+    export function square(x) {
+      return x * x;
+    }
+    
+    // 클래스의 공개
+    export class Person {
+      constructor(name) {
+        this.name = name;
+      }
+    }    
+    //매번 export 키워드를 사용하는 것이 번거로우면 다음과 같이 하나의 객체로 구성하여 export 하자
+    export {pi, square, Person} ;
+    ```        
