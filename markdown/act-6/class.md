@@ -28,3 +28,30 @@
           class Foo {}  // ReferenceError: Cannot access 'Foo' before initialization
         }        
         ```
+* 생성자를 통한 인스턴스 생성해보기        
+    * new 연산자와 함께 호출한 메서드는 constructor(생성자)이다. 표현식이 아닌 선언식으로 정의한 클래스의 이름은 constructor 와 동일하다. 
+    * new 연산자를 사용하지 않고 constructor 를 호출하면 타입 에러(TypeError)가 발생한다. constructor 는 new 연산자 없이 호출할 수 없다.
+    ```javascript
+    class Foo {}
+    
+    const foo = Foo(); // TypeError: Class constructor Foo cannot be invoked without 'new'    
+    ```
+* 생성자(constructor)
+    * 생성자 내에서만 클래스 필드를 정의할 수 있다.
+    * 자바스크립트의 생성자 함수에서 this 에 추가한 프로퍼티를 클래스 기반 객체지향 언어에서는 클래스 필드라고 부른다.
+    ```javascript    
+    class Person {      
+      constructor(name) {            
+        this._name = name; // class field
+      }
+    }
+    // 인자값을 전달하여 클래스 필드 값을 설정이 가능하다.
+    const me = new Person('Lee');
+    console.log(me); // Person {_name: "Lee"}    
+    ```
+    * constructor 는 생략하면 클래스에 constructor() {}를 포함한 것과 동일하게 동작한다. 즉, 빈 객체를 생성한다. 따라서 인스턴스에 프로퍼티를 추가하려면 인스턴스를 생성한 이후, 프로퍼티를 동적으로 추가해야 한다.
+* 클래스 필드
+    * 클래스 바디에는 메소드만 선언할 수 있다. 클래스 바디에 클래스 필드(멤버 변수)를 선언하면 문법 에러(SyntaxError)가 발생한다. 왜 할수 없지라고 조금 고민하게 했었으나 이 자료를 보고 이해했다.
+    * constructor 내부에서 선언한 클래스 필드는 ***클래스가 생성할 인스턴스를 가리키는 this 에 바인딩*** 한다. 이로써 클래스 필드는 클래스가 생성할 인스턴스의 프로퍼티가 되며, 클래스의 인스턴스를 통해 클래스 외부에서 언제나 참조할 수 있다. 즉, 언제나 public이다.
+    * ES6의 클래스는 다른 객체지향 언어처럼 private, public, protected 키워드와 같은 접근 제한자(access modifier)를 지원하지 않는다.
+        > 하지만 제안이 오가고 있다곤하는데 찾아봐야한다. TC39 프로세스의 stage 3(candidate)에 후보로 Private Field 제안이 있다고 한다.  
