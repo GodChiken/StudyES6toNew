@@ -3,6 +3,7 @@
     * 블록 단위로 (중괄호) 스코프를 결정하기위해 등장한 키워드
     * 이 키워드로 선언한 곳에서 가장 가까운 블록을 스코프로 지정한다.
     * 기존 ES5 에서 [명시적이지 않거나 블록 단위로 스코프를 하지 않는 경우에 일어나는 일들을 방지 할 수 있다.](https://github.com/GodChiken/StudyES5/blame/master/src/main/resources/markdown/scope/scope.md)
+    * ***ES6에서 모든 선언(var, let, const, function, function*, class)을 호이스팅한다.***
     * var keyword 와의 차이점
         * window object 에 설정이 되지 않는다.
         * 중복 선언을 방지한다. (Syntax error)
