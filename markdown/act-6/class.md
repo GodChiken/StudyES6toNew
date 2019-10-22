@@ -2,6 +2,7 @@
     * 자바스크립트는 프로토타입 기반(prototype-based) 객체지향 언어다. 비록 다른 객체지향 언어들과의 차이점에 대한 논쟁이 있긴 하지만, 자바스크립트는 강력한 객체지향 프로그래밍 능력을 지니고 있다.
     * 프로토타입 기반 프로그래밍은 클래스가 필요없는(class-free) 객체지향 프로그래밍 스타일로 프로토타입 체인과 클로저 등으로 객체 지향 언어의 상속, 캡슐화(정보 은닉) 등의 개념을 구현할 수 있다.
 * 클래스 정의 (Class Definition)
+    * 클래스도 사실은 함수이나 기존 prototype 기반으로 코딩하던 것을 쉽게 풀어나가기 위한 슈가코드이다.
     * ES6 클래스는 class 키워드를 사용하여 정의한다. 앞에서 살펴본 Person 생성자 함수를 클래스로 정의해 보자.
     * 클래스 이름은 성성자 함수와 마찬가지로 파스칼 케이스를 사용하는 것이 일반적이다. 파스칼 케이스를 사용하지 않아도 에러가 발생하지는 않는다.
     ```javascript
@@ -75,4 +76,48 @@
     foo.firstMethod; // getter, 결과값 1
     foo.firstMethod = [4,3,2,1]; // setter
     foo.firstMethod; // 결과값 4
-    ```  
+    ```
+* 정적 메서드 (static method)
+    * `static` 키워드를 사용하며, 클래스의 이름으로 호출하므로 별도의 인스턴스를 생성할 필요가 없다.
+    * 또한 정적 메서드는 인스턴스에서 호출은 불가능하다.
+    > 이말은 곧 `this`를 사용할 수 없다는 것을 의미한다. 정적 메서드의 용도는 전역적을 사용하는 유틸성 함수를 생성할 때 추로 사용한다.
+    ```javascript
+    class Foo{
+        constructor(props) {
+            this.props = props;
+         
+        }        
+        static staticMethod() {
+            console.log("인스턴스 선언 안해도 되앳!");
+        }
+        prototypeMethod(){
+            return this.props;
+        }
+    }
+    Foo.staticMethod();    
+    ```
+    * ES5 방식으로 클래스를 표현해보고 구조를 비교하여보자
+    ```javascript
+    var Foo = (function (){
+            function Foo(prop) {
+                this.prop = prop;
+            }
+            Foo.staticMethod = function() {
+                return "인스턴스 선언따위 안해도 되앳";          
+            };
+            
+            Foo.prototype.prototypeMethod = function() {
+                return this.prop;
+            };
+            return Foo;
+     })();
+     var foo = new Foo(123);
+     console.log(Foo.prototype === foo.__proto__); //true
+     console.log(Foo.prototype.constructor === Foo); //true 
+     console.log(foo.prototypeMethod());
+     console.log(Foo.staticMethod());
+     console.log(foo.staticMethod()); // Uncaught TypeError    
+    ```
+    * 해당 객체의 `prototype property` 는 객체가 생성자로 사용될 때, 이 함수를 통해 생성된 객체의 부모역활을 하는 프로토타입을 가르킨다. Foo 는 생성자 함수이며 이 함수의 `prototype property` 가 가르키는 프로토타입 객체는 생성자 함수 Foo 를 통해서 생성되는 foo 인스턴스의 부모역활을 한다.       
+    * 따라서 생성자 함수의 메서드인가 프로토타입의 메서드인가 구분하면 왜 호출이 불가한지 판별할 수가 있다.
+    * <!--[[프로토타입과 정적메소드 그림첨부]]-->
