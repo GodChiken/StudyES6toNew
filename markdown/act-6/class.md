@@ -54,4 +54,25 @@
     * 클래스 바디에는 메소드만 선언할 수 있다. 클래스 바디에 클래스 필드(멤버 변수)를 선언하면 문법 에러(SyntaxError)가 발생한다. 왜 할수 없지라고 조금 고민하게 했었으나 이 자료를 보고 이해했다.
     * constructor 내부에서 선언한 클래스 필드는 ***클래스가 생성할 인스턴스를 가리키는 this 에 바인딩*** 한다. 이로써 클래스 필드는 클래스가 생성할 인스턴스의 프로퍼티가 되며, 클래스의 인스턴스를 통해 클래스 외부에서 언제나 참조할 수 있다. 즉, 언제나 public이다.
     * ES6의 클래스는 다른 객체지향 언어처럼 private, public, protected 키워드와 같은 접근 제한자(access modifier)를 지원하지 않는다.
-        > 하지만 제안이 오가고 있다곤하는데 찾아봐야한다. TC39 프로세스의 stage 3(candidate)에 후보로 Private Field 제안이 있다고 한다.  
+        > 하지만 제안이 오가고 있다곤하는데 찾아봐야한다. TC39 프로세스의 stage 3(candidate)에 후보로 Private Field 제안이 있다고 한다.
+* 접근자 프로퍼티
+    * `get` 키워드를 사용하여 클래스 필드값을 사용하여 반환값을 얻기 위해서 사용이 된다. 해당 키워드를 사용하여 메서드를 선언하는 경우, 클래스 필드처럼 사용할 수 있으며 프로퍼티처럼 참조가 가능하다.
+    * `set` 키워드를 사용해서 클래스 필드를 조작하는 용도이다. 프로퍼티처럼 값을 할당하는 방식으로 사용하면된다.
+    ```javascript
+    class Foo{
+        constructor(arr = []){
+            this._arr = arr;
+        }
+        get firstMethod(){
+            return this._arr.length ? this._arr[0] : null;
+        }
+        set firstMethod(value){
+            this._arr = value;
+        }
+    }
+    const foo = new Foo([1,2]);
+    foo.firstMethod(); // 함수 호출하듯 하면 안된다.
+    foo.firstMethod; // getter, 결과값 1
+    foo.firstMethod = [4,3,2,1]; // setter
+    foo.firstMethod; // 결과값 4
+    ```  
